@@ -1,6 +1,6 @@
 /*
 **  Ball Constructor Function
-**  yoName
+**  Coby Kraus
 **  Aug 20, 2018
 */
 

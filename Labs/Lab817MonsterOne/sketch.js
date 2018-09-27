@@ -9,7 +9,7 @@ function setup() {
 
 
 }
-
+//testforgithub
 //  The draw function is called @ 30 fps
 function draw() {
 //Monster 1
@@ -26,7 +26,7 @@ fill (0, 0, 0);
 ellipse(150, 400, 25, 25);
 fill (0, 0, 0);
 ellipse(250, 400, 25,25);
-// Mouth 
+// Mouth
 fill (0, 0, 250);
 arc(240,440,200,50,20,PI);
 
@@ -44,7 +44,7 @@ fill (0, 0, 0);
 ellipse(550, 500, 25, 25);
 fill (0, 0, 0);
 ellipse(650, 500, 25,25);
-// Mouth 
+// Mouth
 fill (0, 0, 250);
 arc(640,540,200,50,20,PI);
 
@@ -62,7 +62,7 @@ fill (0, 0, 0);
 ellipse(500, 120, 25, 25);
 fill (0, 0, 0);
 ellipse(600, 120, 25,25);
-// Mouth 
+// Mouth
 fill (0, 0, 250);
 arc(590,160,200,50,20,PI);
 

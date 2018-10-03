@@ -23,11 +23,11 @@ function Boid(location, velocity, radius, col){
      this.vel.add(this.acc);
      this.loc.add(this.vel);
      var d = this.loc.dist(redBall.loc);
-
+//boids go away from ball
       if(d<400){
 				var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
 				steeringForce.normalize();
-				steeringForce.mult(.05);
+				steeringForce.mult(.01);
 		    this.vel.add(steeringForce);
 			}
    }

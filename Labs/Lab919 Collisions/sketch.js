@@ -1,6 +1,6 @@
 //  Global variables
-var boids = [];
-var redBall;
+var boids = [];  //array of boids
+var redBall; //the big ball that catches boids
 // put setup code here
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -16,7 +16,7 @@ function setup() {
 
 
 }
-//boids go
+//boids move
 function draw() {
 	background(20,20,20, 250);
 	redBall.run();

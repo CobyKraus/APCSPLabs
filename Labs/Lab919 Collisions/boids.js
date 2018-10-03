@@ -22,7 +22,14 @@ function Boid(location, velocity, radius, col){
    this.update = function(){
      this.vel.add(this.acc);
      this.loc.add(this.vel);
+     var d = this.loc.dist(redBall.loc);
 
+      if(d<200){
+				var steeringForce = p5.Vector.sub(this.loc, redBall.loc);
+				steeringForce.normalize();
+				steeringForce.mult(.1);
+		    this.vel.add(steeringForce);
+			}
    }
 
    //checkEdges() reverses speed when the ball touches an edge
@@ -43,7 +50,7 @@ function Boid(location, velocity, radius, col){
    this.render = function(){
      push() // push or save the current coord system into the stack
       translate(this.loc.x, this.loc.y);
-      rotate(0);
+      rotate(this.vel.heading() + radians(90));
       triangle(-5, 0, 5, 0, 0, -15);
      pop()  //  pop or restore the coordianate system from the stack
 

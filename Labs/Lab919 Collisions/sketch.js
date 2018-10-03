@@ -11,12 +11,10 @@ function setup() {
   redBall = new Ball(createVector(0, 0),
                       33,
                       color(random(255),random(255),random(255)))
+
   //returns the distance between two objects
-  if (var i=0; i<==loadBoids; i++){
-    //returns the distance between two objects
-    var dist = vector1.dist(vector2);
-    boids.splice(i, 1)// remove one element at index i
-  }
+
+
 }
 
 function draw() {
@@ -26,7 +24,17 @@ function draw() {
 		boids[i].run();
 
   }
-
+  //getting rid of boids
+  for (var i = 0; i < boids.length; i++){
+    var x = boids[i];
+    var y = redBall.loc;
+    var z = x.loc;
+    //returns the distance between two objects
+    var dist = y.dist(z);
+    if (dist <= 25){
+    boids.splice(i, 1)// remove one element at index i
+    }
+  }
 }
 
 function loadBoids(numBoids){

@@ -4,7 +4,7 @@
 **  Aug 20, 2018
 */
 
-function Ball(loc, rad, col){
+function Square(loc, rad, col){
   // Instance variables
    this.loc = loc;
    this.rad = rad;

@@ -17,7 +17,7 @@ function Square(loc, rad, col){
   // This function changes the location of the ball
   // by adding speed to x and y
    this.update = function(){
-     var mouseLoc = createVector(mouseX, mouseY);
+     var mouseLoc = createVector(mouseX, 500);
      this.loc = p5.Vector.lerp(this.loc, mouseLoc, .09)
 
    }

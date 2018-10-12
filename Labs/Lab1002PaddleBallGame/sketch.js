@@ -14,12 +14,6 @@ function setup() {
   square = new Square(createVector(0, 0),
                       33,
                       color(random(255),random(255),random(255)))
-  scoreElem = createDiv('Score = 0' );
-  scoreElem.position(80, 40);
-  scoreElem.id = 'score';
-  scoreElem.style('color', 'white');
-
-}
 
 //makes paddle appear and move
 function draw() {
@@ -41,7 +35,7 @@ function draw() {
       scoreElem++;
     }
 
-    }
+
 
   }
 }
@@ -57,11 +51,4 @@ function loadBalls(numBalls){
         balls.push(new Ball(loc, vel, radius, col));
 
     }
-
-}
-function Score(){
-  if (balls[balls.length - 1]===square.loc) {
-    var prevScore = parseInt(scoreElem.html().substring(8));
-    scoreElem.html('Score = ' + (prevScore + 1));
   }
-}

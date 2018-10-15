@@ -9,11 +9,12 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20); //draws canvas
   //calls for a certain number of balls
-  loadBalls(2);  //  !!!!!!!!!!  this is a function call
+  loadBalls(50);  //  !!!!!!!!!!  this is a function call
   //creates the paddle
   square = new Square(createVector(0, 0),
                       33,
                       color(random(255),random(255),random(255)))
+  }
 
 //makes paddle appear and move
 function draw() {
@@ -23,20 +24,20 @@ function draw() {
   for(var i = 0; i < balls.length; i = i + 1){
     balls[i].run();
   }
+  //check for collision detection and splice
   for (var i = 0; i < balls.length; i++){
     var x = balls[i];
     var y = square.loc;
     var z = x.loc;
     //returns the distance between two objects
     var dist = y.dist(z);
-    if (dist <= 50){
-    balls.splice(i, 1)// remove one element at index i
-    if(dist<=50){
-      scoreElem++;
-    }
+    if (this.loc.x>paddle.loc.x
+        && this.loc.x < paddle.loc.x + paddle.loc.width
+        && this.loc.y<paddle.loc.y
+        && this.loc.y+this.height<paddle.loc.height){
+      balls.splice(i, 1)// remove one element at index i
 
-
-
+  }
   }
 }
 //prints and creates multiple balls

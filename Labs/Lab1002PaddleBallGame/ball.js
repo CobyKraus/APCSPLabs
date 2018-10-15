@@ -12,6 +12,7 @@ function Ball(location, velocity, radius, col){
    this.rad = radius;
    this.col = col;
    this.acc = createVector(0,.1);
+
   // This function calls other functions
   //calling the three other functions that are also in the code
   this.run = function(){
@@ -45,5 +46,13 @@ function Ball(location, velocity, radius, col){
       //creatin the ball shape
       ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
    }
+   /*
+   this.isColliding=function(){
+     if (this.loc.x>paddle.loc.x
+       && this.loc.x < paddle.loc.x + width
+       && this.loc.y<paddle.loc.y
+       && this.loc.y+this.height<paddle.height)
+   }
 
+*/
 }

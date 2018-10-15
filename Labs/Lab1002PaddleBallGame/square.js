@@ -7,7 +7,8 @@
 function Square(loc, rad, col){
   // Instance variables
    this.loc = loc;
-   this.rad = rad;
+   this.w = width;
+   this.h = height;
    this.col = col;
   // This function calls other functions
   this.run = function(){

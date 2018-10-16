@@ -46,13 +46,18 @@ function Ball(location, velocity, radius, col){
       //creatin the ball shape
       ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
    }
-   /*
+/*
    this.isColliding=function(){
-     if (this.loc.x>paddle.loc.x
-       && this.loc.x < paddle.loc.x + width
-       && this.loc.y<paddle.loc.y
-       && this.loc.y+this.height<paddle.height)
+     if ( this.loc.x > square.loc.x  &&
+          this.loc.x < square.loc.x + square.w &&
+          this.loc.y > square.loc.y  &&
+          this.loc.y + this.height < square.h){
+         return true;
+       }
+       return false;
    }
-
 */
+
+
+
 }

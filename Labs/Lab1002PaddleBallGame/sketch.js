@@ -1,7 +1,7 @@
 //  Global variables
 
 var balls = [];
-var square
+var square;
 var scoreElem;
 // put setup code here
 function setup() {
@@ -25,19 +25,15 @@ function draw() {
     balls[i].run();
   }
   //check for collision detection and splice
-  for (var i = 0; i < balls.length; i++){
-    var x = balls[i];
-    var y = square.loc;
-    var z = x.loc;
-    //returns the distance between two objects
-    var dist = y.dist(z);
-    if (this.loc.x>paddle.loc.x
-        && this.loc.x < paddle.loc.x + paddle.loc.width
-        && this.loc.y<paddle.loc.y
-        && this.loc.y+this.height<paddle.loc.height){
-      balls.splice(i, 1)// remove one element at index i
 
-  }
+  for (var i = 0; i < balls.length; i++){
+    if (balls[i].loc.x>square.loc.x
+        && balls[i].loc.x < square.loc.x + square.w
+        && balls[i].loc.y>square.loc.y
+        && balls[i].loc.y<square.loc.y + square.h){
+          balls.splice(i, 1)// remove one element at index i
+
+        }
   }
 }
 //prints and creates multiple balls

@@ -2,12 +2,17 @@
 
 var balls = [];
 var square;
-var score = 0;
+//var score = 0;
 // put setup code here
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20); //draws canvas
+//function that controls when the balls are placed
+  function startGame(){
+    //calls for a certain number of balls
+    loadBalls(50);  //  !!!!!!!!!!  this is a function call
+  }
   //calls for a certain number of balls
   loadBalls(50);  //  !!!!!!!!!!  this is a function call
   //creates the paddle
@@ -24,13 +29,7 @@ function draw() {
   for(var i = 0; i < balls.length; i = i + 1){
     balls[i].run();
   }
-  for(var score = 0; score<500; score++){
-    text("Score: "+ 30, 30, 30);
- }
-  if (score >= 30){
-    textSize(50);
-    text("Congratulations you win!")
-  }
+
 
   //check for collision detection and splice
 
@@ -41,7 +40,7 @@ function draw() {
     balls[i].loc.y<(square.loc.y + square.h)){
       balls.splice(i, 1)// remove one element at index i
       if (balls[i].vel>0){
-        
+        startGame();
       }
 
     }

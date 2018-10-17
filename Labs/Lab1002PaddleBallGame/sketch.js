@@ -2,7 +2,7 @@
 
 var balls = [];
 var square;
-var scoreElem;
+var score = 0;
 // put setup code here
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -24,16 +24,27 @@ function draw() {
   for(var i = 0; i < balls.length; i = i + 1){
     balls[i].run();
   }
+  for(var score = 0; score<500; score++){
+    text("Score: "+ 30, 30, 30);
+ }
+  if (score >= 30){
+    textSize(50);
+    text("Congratulations you win!")
+  }
+
   //check for collision detection and splice
 
   for (var i = 0; i < balls.length; i++){
-    if (balls[i].loc.x>square.loc.x
-        && balls[i].loc.x < square.loc.x + square.w
-        && balls[i].loc.y>square.loc.y
-        && balls[i].loc.y<square.loc.y + square.h){
-          balls.splice(i, 1)// remove one element at index i
+    if (balls[i].loc.x>(square.loc.x) &&
+    balls[i].loc.x < (square.loc.x + square.w) &&
+    balls[i].loc.y>(square.loc.y) &&
+    balls[i].loc.y<(square.loc.y + square.h)){
+      balls.splice(i, 1)// remove one element at index i
+      if (balls[i].vel>0){
+        
+      }
 
-        }
+    }
   }
 }
 //prints and creates multiple balls

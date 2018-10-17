@@ -4,11 +4,11 @@
 **  Aug 20, 2018
 */
 
-function Square(loc, rad, col){
+function Square(loc,  col){
   // Instance variables
    this.loc = loc;
-   this.w = width;
-   this.h = 500;
+   this.w = 150;
+   this.h = 20;
    this.col = col;
   // This function calls other functions
   this.run = function(){
@@ -27,7 +27,7 @@ function Square(loc, rad, col){
     // render() draws the square at the new location
    this.render = function(){
       fill(0,255,0);
-      rect(this.loc.x,500 , 150, 20);
+      rect(this.loc.x,500 ,  this.w, this.h);
    }
 
 }

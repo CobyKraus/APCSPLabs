@@ -21,6 +21,8 @@ function setup() {
 //makes paddle appear and move
 function draw() {
   background(20,20,20);
+  stroke(255);
+  text(score, 100, 100);
   square.run();
   //prints balls and makes balls move
   for(var i = 0; i < balls.length; i = i + 1){
@@ -30,15 +32,17 @@ function draw() {
 
   //checks for collision detection and splices the balls from the array
 
-  for (var i = 0; i < balls.length-1; i++){
+  for (var i = 0; i <=balls.length-1; i++){
     if (balls[i].loc.x>(square.loc.x) &&
     balls[i].loc.x < (square.loc.x + square.w) &&
     balls[i].loc.y>(square.loc.y) &&
     balls[i].loc.y<(square.loc.y + square.h)){
+      score++;
       balls.splice(i, 1)// remove one element at index i
       //resets the balls after they hit bottom of paddle
-      if (balls[i].vel.y<0){
-        balls = [];
+      if (balls[i].vel.y < 0 || balls.length === 0){
+        //balls = [];
+        balls=[];
         loadBalls(35);
         for(var i=0;i<balls.length;i++){
           balls.run
@@ -47,7 +51,14 @@ function draw() {
 
     }
   }
+  if (score===40){
+    text("Congratulations! You win",400,400);
+    balls=[];
+    loadBalls(0);
+  }
 }
+
+
 //prints and creates multiple balls
 function loadBalls(numBalls){
 

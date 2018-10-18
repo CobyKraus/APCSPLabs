@@ -3,6 +3,7 @@
 var balls = [];
 var square;
 var score = 0;
+var currNumOfBalls = 0;
 //var score = 0;
 // put setup code here
 function setup() {
@@ -10,7 +11,7 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(20,20,20); //draws canvas
     //calls for a certain number of balls
-  loadBalls(35);  //  !!!!!!!!!!  this is a function call
+  loadBalls(3);  //  !!!!!!!!!!  this is a function call
   //creates the paddle
   square = new Square(createVector(0, 0),
                       33,
@@ -38,15 +39,18 @@ function draw() {
     balls[i].loc.y>(square.loc.y) &&
     balls[i].loc.y<(square.loc.y + square.h)){
       score++;
-      balls.splice(i, 1)// remove one element at index i
+      currNumOfBalls+=3;
       //resets the balls after they hit bottom of paddle
       if (balls[i].vel.y < 0 || balls.length === 0){
         //balls = [];
-        balls=[];
-        loadBalls(35);
-        for(var i=0;i<balls.length;i++){
-          balls.run
-        }
+        //balls=[];
+
+        loadBalls(3+currNumOfBalls);
+        // for(var i=0;i<balls.length;i++){
+        //   balls.run
+        // }
+      } else {
+          balls.splice(i, 1)// remove one element at index i
       }
 
     }
@@ -61,7 +65,7 @@ function draw() {
 
 //prints and creates multiple balls
 function loadBalls(numBalls){
-
+  balls = [];
     for(var i = 0; i < numBalls; i++){
         var loc = createVector(random(width), random(height)/8);
         var vel = createVector(random(-3,3), random(-3,3));

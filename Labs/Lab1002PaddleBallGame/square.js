@@ -15,8 +15,8 @@ function Square(loc,  col){
     this.update();
     this.render();
   }
-  // This function changes the location of the ball
-  // by adding speed to x and y
+
+  //lerping paddle to mouse so that paddle follows mouse
    this.update = function(){
      var mouseLoc = createVector(mouseX, 500);
      this.loc = p5.Vector.lerp(this.loc, mouseLoc, .09)
@@ -25,6 +25,7 @@ function Square(loc,  col){
 
 
     // render() draws the square at the new location
+    //creating the parameters of the square
    this.render = function(){
       fill(0,255,0);
       rect(this.loc.x,500 ,  this.w, this.h);

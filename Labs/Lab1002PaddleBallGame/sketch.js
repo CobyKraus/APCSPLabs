@@ -22,7 +22,8 @@ function setup() {
 //makes paddle appear and move
 function draw() {
   background(20,20,20);
-  stroke(255);
+  //printing the score
+  textSize(20);
   text(score, 100, 100);
   square.run();
   //prints balls and makes balls move
@@ -38,24 +39,24 @@ function draw() {
     balls[i].loc.x < (square.loc.x + square.w) &&
     balls[i].loc.y>(square.loc.y) &&
     balls[i].loc.y<(square.loc.y + square.h)){
+      //adds score as balls hit paddle
       score++;
+      //adds balls to the current number of balls variable
       currNumOfBalls+=3;
       //resets the balls after they hit bottom of paddle
       if (balls[i].vel.y < 0 || balls.length === 0){
-        //balls = [];
-        //balls=[];
-
+        //resets the balls and adds balls if a ball hits bottom of paddle
         loadBalls(3+currNumOfBalls);
-        // for(var i=0;i<balls.length;i++){
-        //   balls.run
-        // }
       } else {
           balls.splice(i, 1)// remove one element at index i
       }
 
     }
   }
+  //ending game if score is 40
   if (score===40){
+    fill(250,0,0)
+    textSize(20);
     text("Congratulations! You win",400,400);
     balls=[];
     loadBalls(0);
@@ -71,7 +72,6 @@ function loadBalls(numBalls){
         var vel = createVector(random(-3,3), random(-3,3));
         var radius = random(20,40);
         var col = color(random(255), random(255), random(255));
-
         balls.push(new Ball(loc, vel, radius, col));
 
     }

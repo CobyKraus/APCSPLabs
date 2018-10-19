@@ -3,7 +3,7 @@
 **  Coby Kraus
 **  Aug 20, 2018
 */
-
+//creating a square function
 function Square(loc,  col){
   // Instance variables
    this.loc = loc;

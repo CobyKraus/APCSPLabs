@@ -1,0 +1,5 @@
+cat
+bird
+rabbit
+dog
+alligator

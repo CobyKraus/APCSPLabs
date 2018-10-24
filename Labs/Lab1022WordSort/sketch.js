@@ -1,20 +1,29 @@
 var txt;
 function preload(){
   // p5 has a function named "loadStrings"
-  txt = loadStrings("words.txt");
+  txt = loadStrings("word.txt");
+  console.log(txt);
 }
 
 function setup() {
  noCanvas();
+
+ console.log("before bubble sorting")
+ console.log(txt);
+ swap();
+ console.log("after bubble sorting");
+ console.log(txt);
 }
 
-swap(nums, 2, 4)
-function swap(nums, a, b){
-  for(var i = nums.length - 1; i >= 1; i-- ){
-    for(var j = 0; j < nums.length; j++ ){
-   var temp = nums[a];
-   nums[a] = nums[b];
-   nums[b] = temp
+
+function swap(){
+  for(var i = txt.length - 1; i >= 0; i-- ){
+    for(var j = 0; j < i-1; j++ ){
+      if (txt[i]<txt[j]){
+        var temp = txt[i];
+        txt[i] = txt[j];
+        txt[j] = temp
+    }
   }
  }
 }

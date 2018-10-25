@@ -1,6 +1,9 @@
 pig
 cat
 bird
+zebra
 rabbit
+giraffe
 dog
+lion
 alligator

@@ -3,7 +3,7 @@ var myArray;
 
 
 function setup(){
-  loadJSON("file://///10.7.1.51/E17%20share%20folder/Principles/populationData/population.json", gotData, 'jsonp');
+  loadJSON("file://///10.7.1.51/E17%20share%20folder/Principles/populationData/population.json", gotData, "jsonp");
 }
 
 function gotData(dataNew){

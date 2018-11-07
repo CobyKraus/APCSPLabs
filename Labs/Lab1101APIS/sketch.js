@@ -7,9 +7,13 @@ function setup(){
   barHeight=20;
   loadJSON("population.json", gotData);
 }
-//function draw(){
+function draw(){
   //useData();
-//}
+  fill(0,255,0);
+  for (var i = 0; i<countrydata.length; i++){
+    map(data.countrydata.males[i]);
+  }
+}
 function gotData(dataNew){
   data = dataNew;
 }

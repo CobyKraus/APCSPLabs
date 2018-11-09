@@ -6,13 +6,16 @@ function setup(){
   background(20);
   barHeight=20;
   loadJSON("population.json", gotData);
+
 }
 function draw(){
   //useData();
   fill(0,255,0);
-  for (var i = 0; i<countrydata.length; i++){
-    map(data.countrydata.males[i]);
+  for (var i = 0; i<data.countrydata.length; i++){
+    map(data[i].countrydata.males);
+    BubbleSort();
   }
+
 }
 function gotData(dataNew){
   data = dataNew;
@@ -33,10 +36,10 @@ function BubbleSort(){
   for(var i = length - 1; i >= 0; i-- ){
     //second for loop that goes from 0 to i
     for(var j = 0; j < i; j++ ){
-      if (data.countrydata.males[i] < data.countrydata.males[j]){
-        var temp = data.countrydata.males[i];
-        data.countrydata.males[i] = data.countrydata.males[j];
-        data.countrydata.males[j] = temp
+      if (data[i].countrydata.males < data[j].countrydata.males){
+        var temp = data[i].countrydata.males;
+        data[i].countrydata.males = data[j].countrydata.males;
+        data[j].countrydata.males = temp
       }
     }
   }

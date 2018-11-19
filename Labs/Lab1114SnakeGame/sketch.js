@@ -1,6 +1,10 @@
+//global variables
 var w = 20;
 var col, rows;
 var snake;
+var food;
+//creates canvas and sets the parameters of the snake
+//make food not land on snake
 function setup(){
   var cnv = createCanvas(800,800);
   cols = width/w;
@@ -9,10 +13,14 @@ function setup(){
   frameRate(100);
   background(20,20,20);
   snake = new Snake(createVector(width/2, height/2), createVector(1,0));
+  food = new Food(createVector(random(0,800),random(0,800)),20);
 }
+//snake is formed
 function draw(){
   snake.run();
+  food.run();
 }
+//tells the snake where to go based on which key is pressed
 function keyPressed(){
   if(keyCode===UP_ARROW){
     snake.vel = createVector(0,-1);

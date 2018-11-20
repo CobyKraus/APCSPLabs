@@ -11,7 +11,7 @@ function setup(){
   rows = height/w;
   cnv.position((windowWidth-width)/2,30);
   frameRate(100);
-  background(20,20,20);
+  background(0,0,0);
   snake = new Snake(createVector(width/2, height/2), createVector(1,0));
   food = new Food(createVector(random(0,800),random(0,800)),20);
 }
@@ -19,6 +19,9 @@ function setup(){
 function draw(){
   snake.run();
   food.run();
+  if (food.loc.x===snake.loc.x && food.loc.y===snake.loc.y){
+    snake.length+=1;
+  }
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){

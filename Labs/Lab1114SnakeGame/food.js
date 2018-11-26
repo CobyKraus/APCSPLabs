@@ -17,7 +17,7 @@ function Food(loc,w){
   }
   this.update = function(){
     //this.vel.mult(w);
-    this.w=20;
+    //this.w=20;
 
   }
   this.render = function(){

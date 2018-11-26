@@ -1,3 +1,4 @@
+var segments = [];
 function Snake(loc,vel){
   this.loc = loc;
   this.vel = vel;
@@ -14,6 +15,12 @@ function Snake(loc,vel){
   }
   this.render = function(){
     fill(0,255,0)
-    rect(this.loc.x, this.loc.y, w, w)
+    rect(this.loc.x, this.loc.y, w, w);
+    rect(this.loc.x+w, this.loc.y, w, w)
   }
 }
+// function Segments(){
+//   for(i=0;i<segments.length;i++){
+//     // this.loc = loc
+//   }
+// }

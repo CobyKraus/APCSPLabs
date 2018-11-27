@@ -10,12 +10,17 @@ function Snake(headloc,vel){
     this.render();
   }
   this.update = function(){
-    //this.vel.mult(w);
+
     this.segments[0].x = this.headloc.x
     this.segments[0].y = this.headloc.y
     this.headloc.add(this.vel);
     this.headloc.x = constrain(this.headloc.x, 0, width-w)
     this.headloc.y = constrain(this.headloc.y, 0, height-w)
+    //console.log(this.headloc.dist(food.loc));
+    if(this.headloc.dist(food.loc) === 0) {
+      this.segments.push(createVector(0, 0));
+      newFood();
+    }
   }
   this.render = function(){
     fill(0,255,0)

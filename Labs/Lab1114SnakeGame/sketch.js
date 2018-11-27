@@ -12,15 +12,20 @@ function setup(){
   cnv.position((windowWidth-width)/2,30);
   frameRate(10);
   background(0,0,0);
-  snake = new Snake(createVector(width/2, height/2), createVector(0,0));
-  food = new Food(createVector(random(40)*w, random(40)*w),w);
+  noStroke();
+
+  snake = new Snake(createVector(floor(width/2), floor(height/2)));
+  var fx = floor(random(cols))
+  var fy = floor(random(rows))
+  food = new Food(createVector(fx*w, fy*w));
+
 }
 //snake is formed
 function draw(){
   background(0,0,0);
   snake.run();
   food.run();
-  newFood();
+  //newFood();
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){
@@ -36,11 +41,13 @@ function keyPressed(){
   if(keyCode===LEFT_ARROW){
     snake.vel = createVector(-1*w,0);
   }
+
 }
 function newFood(){
-  if (food.loc.x===snake.headloc.x &&
-  food.loc.y===snake.headloc.y){
-      food = new Food(createVector(random(40)*20, random(40)*20),w);
-      snake.segments.length=snake.segments.length++
-    }
+  var fx = floor(random(cols))
+  var fy = floor(random(rows))
+  food = new Food(createVector(fx*w, fy*w));
+
+
+
  }

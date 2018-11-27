@@ -5,23 +5,21 @@
 */
 //run function draws the food
 //set parameters of length and width and location
-function Food(loc,w){
+function Food(loc){
   this.loc=loc;
-  this.w = w;
-  this.loc.x = random(40)*w
-  this.loc.y = random(40)*w;
+
+
 
   this.run = function(){
     this.update();
     this.render();
   }
   this.update = function(){
-    //this.vel.mult(w);
-    //this.w=20;
 
   }
   this.render = function(){
-    fill(0,0,255)
+
+    fill(255,0,0)
     rect(this.loc.x, this.loc.y, w, w)
   }
 }

@@ -8,8 +8,8 @@
 function Food(loc,w){
   this.loc=loc;
   this.w = w;
-  this.loc.x = random(0,800)
-  this.loc.y = random(0,800);
+  this.loc.x = random(40)*w
+  this.loc.y = random(40)*w;
 
   this.run = function(){
     this.update();

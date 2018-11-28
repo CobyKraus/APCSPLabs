@@ -12,7 +12,6 @@ function setup(){
   cnv.position((windowWidth-width)/2,30);
   frameRate(10);
   background(0,0,0);
-  noStroke();
 
   snake = new Snake(createVector(floor(width/2), floor(height/2)));
   var fx = floor(random(cols))

@@ -18,8 +18,10 @@ function Snake(headloc,vel){
     this.headloc.y = constrain(this.headloc.y, 0, height-w)
     //console.log(this.headloc.dist(food.loc));
     if(this.headloc.dist(food.loc) === 0) {
-      this.segments.push(createVector(0, 0));
+       this.segments.push(createVector(0, 0));
       newFood();
+
+
     }
   }
   this.render = function(){
@@ -28,8 +30,3 @@ function Snake(headloc,vel){
     rect(this.segments[0].x,this.segments[0].y,w,w)
   }
 }
-// function Segments(){
-//   for(i=0;i<segments.length;i++){
-//     // this.headloc = headloc
-//   }
-// }

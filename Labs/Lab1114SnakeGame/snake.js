@@ -19,6 +19,10 @@ function Snake(headloc,vel){
     //console.log(this.headloc.dist(food.loc));
     if(this.headloc.dist(food.loc) === 0) {
        this.segments.push(createVector(0, 0));
+        for (var i =this.segments.length-1;i>=1;i--){
+          this.segments[i].x=this.segments[i-1].x;
+          this.segments[i].y=this.segments[i-1].y;
+      }
       newFood();
 
 

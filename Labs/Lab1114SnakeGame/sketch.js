@@ -3,6 +3,7 @@ var w = 20;
 var cols, rows;
 var snake;
 var food;
+var score = 0;
 //creates canvas and sets the parameters of the snake
 //make food not land on snake
 function setup(){
@@ -24,6 +25,9 @@ function draw(){
   background(0,0,0);
   snake.run();
   food.run();
+  fill(0,0,255)
+  textSize(20);
+  text(score, 100, 100);
   //newFood();
 }
 //tells the snake where to go based on which key is pressed
@@ -50,3 +54,4 @@ function newFood(){
 
 
  }
+//

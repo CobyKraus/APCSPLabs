@@ -39,7 +39,7 @@ function Snake(headloc,vel){
   this.render = function(){
     fill(0,255,0)
     rect(this.headloc.x, this.headloc.y, w, w);
-     for(i=0;i<=this.segments.length-1;i++){
+     for(i=1;i<=this.segments.length-1;i++){
        rect(this.segments[i].x,this.segments[i].y,w,w)
     }
   }

@@ -28,7 +28,6 @@ function draw(){
   fill(0,0,255)
   textSize(20);
   text(score, 100, 100);
-  //newFood();
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){

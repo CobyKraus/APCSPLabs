@@ -28,6 +28,9 @@ function draw(){
   fill(0,0,255)
   textSize(20);
   text(score, 100, 100);
+  if(snake.headloc.x === width-w || snake.headloc.x===20 || snake.headloc.y === 20 || snake.headloc.y === height-w){
+    console.log("wow");
+  }
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){

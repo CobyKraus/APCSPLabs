@@ -15,8 +15,7 @@ function Snake(headloc,vel){
     this.headloc.add(this.vel);
     this.headloc.x = constrain(this.headloc.x, 0, width-w)
     this.headloc.y = constrain(this.headloc.y, 0, height-w)
-    // this.segments[0].x = this.headloc.x
-    // this.segments[0].y = this.headloc.y
+
 
     //for loop will move the segments
       for (var i =this.segments.length-1;i>=1;i--){
@@ -33,6 +32,7 @@ function Snake(headloc,vel){
       newFood();
 
 
+
     }
 
   }
@@ -42,5 +42,11 @@ function Snake(headloc,vel){
      for(i=1;i<=this.segments.length-1;i++){
        rect(this.segments[i].x,this.segments[i].y,w,w)
     }
+    // for(var i = 1; i<this.segments.length-2;i++){
+    //   if(this.segments[this.segments.length-1].x===this.segments[i].x && this.segments[this.segments.length-1].y===this.segments[i].y){
+    //     segments = [];
+    //     collision = true;
+    //   }
+    // }
   }
 }

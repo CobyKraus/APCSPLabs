@@ -8,6 +8,7 @@ function Snake(headloc,vel){
   this.run = function(){
     this.update();
     this.render();
+    this.tangled();
   }
   this.update = function(){
     this.segments[0].x = this.headloc.x
@@ -48,5 +49,15 @@ function Snake(headloc,vel){
     //     collision = true;
     //   }
     // }
+  }
+  this.tangled = function(){
+    for(var i = 0; i<this.segments.length-1;i++){
+      if(this.headloc.x===this.segments[i].x && this.headloc.y===this.segments[i].y){
+        food.loc.x=1000;
+        food.loc.y=1000;
+        fill(0,250,0);
+        rect(800,800,400,400)
+      }
+    }
   }
 }

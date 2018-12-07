@@ -5,6 +5,10 @@ var snake;
 var food;
 var start = "true";
 var score = 0;
+var img;
+function preload(){
+  img = loadImage('hqdefault.jpg')
+}
 //creates canvas and sets the parameters of the snake
 //make food not land on snake
 function setup(){
@@ -32,7 +36,10 @@ function draw(){
   textSize(20);
   text(score, 100, 100);
   if(snake.headloc.x === width-w || snake.headloc.x===20 || snake.headloc.y === 20 || snake.headloc.y === height-w){
-    snake.tangled;
+    food.loc.x=1000;
+    food.loc.y=1000;
+    start="true";
+    endGame();
   }
 }
 //tells the snake where to go based on which key is pressed
@@ -62,12 +69,23 @@ function newFood(){
 
  }
  function startGame(){
-    if(start==="true"){
+    if(start==="true" && score===0){
+      image(img,200,200)
       textFont();
       fill(0,0,255);
       textAlign(CENTER);
       textSize(50);
       text("Snake.  Press space to start",400,300)
+   }
+ }
+ function endGame(){
+   if (start==="true"){
+      image(img,200,200)
+      textFont();
+      fill(0,0,255);
+      textAlign(CENTER);
+      textSize(50);
+      text("Game over. Your score was " + score,400,300)
    }
  }
 

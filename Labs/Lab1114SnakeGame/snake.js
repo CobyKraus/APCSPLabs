@@ -57,7 +57,11 @@ function Snake(headloc,vel){
         food.loc.y=1000;
         fill(0,250,0);
         rect(800,800,400,400)
+        start="true";
+        endGame();
       }
     }
   }
+
+
 }

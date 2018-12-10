@@ -6,6 +6,7 @@ var food;
 var start = "true";
 var score = 0;
 var img;
+var end = "false"
 function preload(){
   img = loadImage('hqdefault.jpg')
 }
@@ -35,12 +36,7 @@ function draw(){
   fill(0,0,255)
   textSize(20);
   text(score, 100, 100);
-  if(snake.headloc.x === width-w || snake.headloc.x===20 || snake.headloc.y === 20 || snake.headloc.y === height-w){
-    food.loc.x=1000;
-    food.loc.y=1000;
-    start="true";
-    endGame();
-  }
+  toEndGame();
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){
@@ -79,13 +75,21 @@ function newFood(){
    }
  }
  function endGame(){
-   if (start==="true"){
+   if (end==="true"){
       image(img,200,200)
       textFont();
       fill(0,0,255);
       textAlign(CENTER);
       textSize(50);
       text("Game over. Your score was " + score,400,300)
+   }
+ }
+ function toEndGame(){
+   if(snake.headloc.x === width-w || snake.headloc.x===w || snake.headloc.y === w || snake.headloc.y === height-w){
+     food.loc.x=1000;
+     food.loc.y=1000;
+     end="true";
+     endGame();
    }
  }
 

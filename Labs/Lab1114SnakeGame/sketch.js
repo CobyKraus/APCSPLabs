@@ -3,10 +3,13 @@ var w = 20;
 var cols, rows;
 var snake;
 var food;
-var start = "true";
+
 var score = 0;
 var img;
 var end = "false"
+var start = "true";
+
+var gameState = 1;
 function preload(){
   img = loadImage('hqdefault.jpg')
 }
@@ -29,14 +32,17 @@ function setup(){
 }
 //snake is formed
 function draw(){
-  background(0,0,0);
-  snake.run();
-  food.run();
-  startGame();
-  fill(0,0,255)
-  textSize(20);
-  text(score, 100, 100);
-  toEndGame();
+
+  if(gameState === 1){
+    startGame();
+  }else if(gameState === 2){
+    playGame();
+  }else if(gameState === 3){
+    endGame();
+  }else{
+    console.log("What up?");
+  }
+
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){
@@ -64,7 +70,7 @@ function newFood(){
 
 
  }
- function startGame(){
+ function startGame(){//  splash screen
     if(start==="true" && score===0){
       image(img,200,200)
       textFont();
@@ -74,8 +80,20 @@ function newFood(){
       text("Snake.  Press space to start",400,300)
    }
  }
+
+ functionn playGame(){//  playing the game
+
+   background(0,0,0);
+   snake.run();
+   food.run();
+   //startGame();
+   fill(0,0,255)
+   textSize(20);
+   text(score, 100, 100);
+ }
+ // end splash screen
  function endGame(){
-   if (end==="true"){
+   if (end === "true"){
       image(img,200,200)
       textFont();
       fill(0,0,255);

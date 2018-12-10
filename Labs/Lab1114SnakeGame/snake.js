@@ -14,8 +14,8 @@ function Snake(headloc,vel){
     this.segments[0].x = this.headloc.x
     this.segments[0].y = this.headloc.y
     this.headloc.add(this.vel);
-    this.headloc.x = constrain(this.headloc.x, 0, width-w)
-    this.headloc.y = constrain(this.headloc.y, 0, height-w)
+    // this.headloc.x = constrain(this.headloc.x, 0, width-w)
+    // this.headloc.y = constrain(this.headloc.y, 0, height-w)
 
 
     //for loop will move the segments

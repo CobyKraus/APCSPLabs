@@ -53,12 +53,11 @@ function Snake(headloc,vel){
   this.tangled = function(){
     for(var i = 0; i<this.segments.length-1;i++){
       if(this.headloc.x===this.segments[i].x && this.headloc.y===this.segments[i].y){
-        food.loc.x=1000;
-        food.loc.y=1000;
-        fill(0,250,0);
-        rect(800,800,400,400)
-        start="true";
-        endGame();
+        // food.loc.x=1000;
+        // food.loc.y=1000;
+        // fill(0,250,0);
+        // rect(800,800,400,400)
+        gameState=3;
       }
     }
   }

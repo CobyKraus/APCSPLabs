@@ -42,7 +42,9 @@ function draw(){
   }else{
     console.log("What up?");
   }
-
+  if(snake.headloc.x > width || snake.headloc.x<0 || snake.headloc.y < 0 || snake.headloc.y > height){
+    gameState=3;
+  }
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){
@@ -58,9 +60,10 @@ function keyPressed(){
   if(keyCode===LEFT_ARROW){
     snake.vel = createVector(-1*w,0);
   }
-  if (keyCode===32){
-    start="false";
+  if (keyCode===32 && score===0){
+    gameState=2;
   }
+
 }
 function newFood(){
   var fx = floor(random(cols))
@@ -81,7 +84,7 @@ function newFood(){
    }
  }
 
- functionn playGame(){//  playing the game
+ function playGame(){//  playing the game
 
    background(0,0,0);
    snake.run();
@@ -93,7 +96,7 @@ function newFood(){
  }
  // end splash screen
  function endGame(){
-   if (end === "true"){
+   if (gameState===3){
       image(img,200,200)
       textFont();
       fill(0,0,255);
@@ -102,13 +105,12 @@ function newFood(){
       text("Game over. Your score was " + score,400,300)
    }
  }
- function toEndGame(){
-   if(snake.headloc.x === width-w || snake.headloc.x===w || snake.headloc.y === w || snake.headloc.y === height-w){
-     food.loc.x=1000;
-     food.loc.y=1000;
-     end="true";
-     endGame();
-   }
- }
+ // function toEndGame(){
+ //   if(snake.headloc.x === width-w || snake.headloc.x===w || snake.headloc.y === w || snake.headloc.y === height-w){
+ //     food.loc.x=1000;
+ //     food.loc.y=1000;
+ //     endGame();
+ //   }
+ // }
 
 //

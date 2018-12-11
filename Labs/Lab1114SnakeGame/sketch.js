@@ -3,12 +3,11 @@ var w = 20;
 var cols, rows;
 var snake;
 var food;
-
-var score = 0;
+var score = 0
 var img;
 var end = "false"
 var start = "true";
-
+//decides which part of the game you are in
 var gameState = 1;
 function preload(){
   img = loadImage('hqdefault.jpg')
@@ -23,7 +22,7 @@ function setup(){
   frameRate(10);
   background(0,0,0);
 
-
+//creates a new snake
   snake = new Snake(createVector(floor(width/2), floor(height/2)));
   var fx = floor(random(cols))
   var fy = floor(random(rows))
@@ -32,7 +31,7 @@ function setup(){
 }
 //snake is formed
 function draw(){
-
+//different parts of the game based on the game state
   if(gameState === 1){
     startGame();
   }else if(gameState === 2){
@@ -42,7 +41,7 @@ function draw(){
   }else{
     console.log("What up?");
   }
-  if(snake.headloc.x > width || snake.headloc.x<0 || snake.headloc.y < 0 || snake.headloc.y > height){
+  if(snake.headloc.x > 800 || snake.headloc.x<0 || snake.headloc.y < 0 || snake.headloc.y > 800){
     gameState=3;
   }
 }
@@ -65,11 +64,15 @@ function keyPressed(){
   }
 
 }
+//creates a new food
 function newFood(){
   var fx = floor(random(cols))
   var fy = floor(random(rows))
-  food = new Food(createVector(fx*w, fy*w));
-
+  for(var i = 0; i < snake.segments.length; i++){
+    if(food.loc!=snake.segments[i].loc){
+      food = new Food(createVector(fx*w, fy*w));
+    }
+  }
 
 
  }

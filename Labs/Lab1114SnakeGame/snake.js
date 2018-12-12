@@ -51,7 +51,7 @@ function Snake(headloc,vel){
     // }
   }
   this.tangled = function(){
-    for(var i = 0; i<this.segments.length-1;i++){
+    for(var i = 0; i<this.segments.length-2;i++){
       if(this.headloc.x===this.segments[i].x && this.headloc.y===this.segments[i].y){
         // food.loc.x=1000;
         // food.loc.y=1000;
@@ -61,6 +61,5 @@ function Snake(headloc,vel){
       }
     }
   }
-
 
 }

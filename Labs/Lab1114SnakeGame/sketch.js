@@ -47,19 +47,19 @@ function draw(){
 }
 //tells the snake where to go based on which key is pressed
 function keyPressed(){
-  if(keyCode===UP_ARROW){
+  if(keyCode===UP_ARROW && snake.vel.w!=w){
     snake.vel = createVector(0,-1*w);
   }
-  if(keyCode===DOWN_ARROW){
+  if(keyCode === DOWN_ARROW){
     snake.vel = createVector(0,1*w);
   }
-  if(keyCode===RIGHT_ARROW){
+  if(keyCode === RIGHT_ARROW){
     snake.vel = createVector(1*w,0);
   }
-  if(keyCode===LEFT_ARROW){
+  if(keyCode === LEFT_ARROW){
     snake.vel = createVector(-1*w,0);
   }
-  if (keyCode===32 && score===0){
+  if (keyCode === 32 && score===0){
     gameState=2;
   }
 

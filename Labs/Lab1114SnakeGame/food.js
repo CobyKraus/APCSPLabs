@@ -17,6 +17,7 @@ function Food(loc){
   this.update = function(){
 
   }
+  //creates and draws the food
   this.render = function(){
 
     fill(255,0,0)

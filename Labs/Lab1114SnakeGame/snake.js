@@ -57,7 +57,7 @@ function Snake(headloc,vel){
   //checks to see if the snake connects with itself
   //if it does, the game state switches and the game is over
   this.tangled = function(){
-    if(this.segments.length!=1&&this.segments.length!=2){
+    if(this.segments.length!=1&&this.segments.length!=2&&this.segments.length!=3){
       for(var i = 1; i<this.segments.length;i++){
         if(this.headloc.x===this.segments[i].x && this.headloc.y===this.segments[i].y){
         // food.loc.x=1000;

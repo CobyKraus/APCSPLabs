@@ -46,7 +46,7 @@ function draw(){
   for(var i = 0; i<snake.segments.length;i++){
     if(snake.segments[i].x > 790 || snake.segments[i].x<0 || snake.segments[i].y < 0 || snake.segments[i].y > 790){
       gameState=3;
-  }
+    }
 }
 }
 //tells the snake where to go based on which key is pressed
@@ -99,9 +99,9 @@ function newFood(){
    snake.run();
    food.run();
    //startGame();
-   // fill(0,0,255)
-   // textSize(20);
-   // text(score, 100, 100);
+    fill(0,0,255)
+    textSize(20);
+    text(score, 100, 100);
  }
  // end splash screen
  function endGame(){
